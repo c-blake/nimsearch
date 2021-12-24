@@ -1,0 +1,47 @@
+#!/bin/sh
+#shopt -s nullglob
+: ${nim="nim"}
+: ${prog="$1"} #Program to compile
+: ${cmd="$2"}  #Sample command invocation for profile-guided-optimization
+: ${nimO="--cc:gcc -d:danger -d:release"}   #nim optimization; e.g. -d:release
+: ${nimOpts="$3"} #nim compilation options; e.g. --gc:markAndSweep
+: ${nimcache="$HOME/.cache/nim/r/$prog"}
+: ${BE=c}
+: ${ccC="gcc"}
+: ${ccG="-g3 -ggdb"}
+: ${ccI="-I/usr/lib/nim/lib"}
+: ${WHOLE="-fwhole-program"}
+: ${BI="-fbuiltin"}
+#: ${OMP="-fopenmp"}
+: ${OFP="-fomit-frame-pointer"}
+: ${OLP="-momit-leaf-frame-pointer"}
+: ${LTO="-flto"}
+: ${OLV="-O3"}
+: ${ccO="$OLV $BI $OFP $OMP $WHOLE $LTO"}
+: ${ccD="-D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing"}
+: ${ccA="-march=native -mtune=native $OLP"}
+: ${ccM="-mfpmath=sse,387 -mfancy-math-387"}
+: ${ccW="-w"}
+: ${ccL="-ldl -lm"}
+: ${ccX=""}
+cc="$ccC $ccG $ccI $ccO $ccD $ccA $ccM $ccW $ccX"
+
+rm -f $nimcache/*.[co]
+
+echo "$nim $BE -c --nimcache:"$nimcache" $nimO $nimOpts $prog.nim"
+$nim $BE -c --nimcache:"$nimcache" $nimO $nimOpts "$prog.nim" || exit 1
+ 
+inputs=$(echo $nimcache/*.c*)
+
+echo "$cc -fprofile-generate $inputs -o $prog $ccL"
+$cc -fprofile-generate $inputs -o $prog $ccL || exit 1
+
+rm -f *.gcda
+echo "PWD is $PWD"
+echo "$cmd"
+eval "$cmd"
+
+echo "$C1$cc -fprofile-use      $inputs -o $prog $ccL$C0"
+$cc -fprofile-use      $inputs -o $prog $ccL || exit 1
+
+rm -f *.gcda

@@ -1,0 +1,40 @@
+L1:~/pkg/neng[1]$ ./facSaved9 /0/cb/ix build < /tmp/framedF
+ingest: 262.915650
+** ./facSaved9 /0/cb/ix build < /tmp/framedF * Time: 31.15s (u) + 29.59s (s)=262.93s (23%) mxRSS 2321
+L1:~/pkg/neng$ echo 'london beer' | ./facSaved9 /0/cb/ix
+1925007 unique terms in 6274026 documents
+"top <N>" changes result limit; "mode o*" OR else AND queries.
+https://en.wikipedia.org/wiki/London_Beer_Flood
+https://en.wikipedia.org/wiki/Battersea_Beer_Festival
+https://en.wikipedia.org/wiki/Beef_and_Butt_Beer
+https://en.wikipedia.org/wiki/Obadiah_Poundage
+https://en.wikipedia.org/wiki/London_Pride_(beer)
+https://en.wikipedia.org/wiki/Porter_(beer)
+https://en.wikipedia.org/wiki/Walter_Wolff_de_Beer
+https://en.wikipedia.org/wiki/Beer_Lane
+https://en.wikipedia.org/wiki/John_Beer_(priest)
+https://en.wikipedia.org/wiki/Vanilla_Beer
+query 0.006177
+L1:~/pkg/neng$ cat facSaved9 >/n
+L1:~/pkg/neng$ ldd facSaved9
+        linux-vdso.so.1 (0x00007ffeb9ba2000)
+        libm.so.6 => /lib64/libm.so.6 (0x0000145da64f2000)
+        librt.so.1 => /lib64/librt.so.1 (0x0000145da64e8000)
+        libdl.so.2 => /lib64/libdl.so.2 (0x0000145da64e2000)
+        libc.so.6 => /lib64/libc.so.6 (0x0000145da6326000)
+        /lib64/ld-linux-x86-64.so.2 (0x0000145da6652000)
+        libpthread.so.0 => /lib64/libpthread.so.0 (0x0000145da6306000)
+L1:~/pkg/neng$ echo 'london beer' | ./facSaved9 /0/cb/ix
+1925007 unique terms in 6274026 documents
+"top <N>" changes result limit; "mode o*" OR else AND queries.
+https://en.wikipedia.org/wiki/London_Beer_Flood
+https://en.wikipedia.org/wiki/Battersea_Beer_Festival
+https://en.wikipedia.org/wiki/Beef_and_Butt_Beer
+https://en.wikipedia.org/wiki/Obadiah_Poundage
+https://en.wikipedia.org/wiki/London_Pride_(beer)
+https://en.wikipedia.org/wiki/Porter_(beer)
+https://en.wikipedia.org/wiki/Walter_Wolff_de_Beer
+https://en.wikipedia.org/wiki/Beer_Lane
+https://en.wikipedia.org/wiki/John_Beer_(priest)
+https://en.wikipedia.org/wiki/Vanilla_Beer
+query 0.008378

@@ -1,0 +1,60 @@
+./data.sh|./allInOnePyIsh2
+ingest: 78.981239
+1749760 unique terms in 6274026 documents
+https://en.wikipedia.org/wiki/Henry_Lowenfeld
+https://en.wikipedia.org/wiki/Obadiah_Poundage
+https://en.wikipedia.org/wiki/London_Beer_Flood
+https://en.wikipedia.org/wiki/Otto_Oppenheimer
+https://en.wikipedia.org/wiki/Horse_Shoe_Brewery
+https://en.wikipedia.org/wiki/Millennium_Dome_raid
+https://en.wikipedia.org/wiki/Rail_Ale_Ramble
+https://en.wikipedia.org/wiki/De_Hems
+https://en.wikipedia.org/wiki/Porter_(beer)
+https://en.wikipedia.org/wiki/Glassglue
+https://en.wikipedia.org/wiki/Beer_Lane
+https://en.wikipedia.org/wiki/Beck%27s_Futures
+https://en.wikipedia.org/wiki/Battersea_Beer_Festival
+https://en.wikipedia.org/wiki/Battersea_and_Wandsworth_TUC
+https://en.wikipedia.org/wiki/Beef_and_Butt_Beer
+https://en.wikipedia.org/wiki/John_Beer_(priest)
+https://en.wikipedia.org/wiki/Vanilla_Beer
+https://en.wikipedia.org/wiki/London_Pride_(beer)
+https://en.wikipedia.org/wiki/Walter_Wolff_de_Beer
+https://en.wikipedia.org/wiki/Daniel_Beer
+ q1: 0.000865
+49544
+ q2: 0.001529
+https://en.wikipedia.org/wiki/London_Beer_Flood
+https://en.wikipedia.org/wiki/Battersea_Beer_Festival
+https://en.wikipedia.org/wiki/Beef_and_Butt_Beer
+https://en.wikipedia.org/wiki/Obadiah_Poundage
+https://en.wikipedia.org/wiki/London_Pride_(beer)
+https://en.wikipedia.org/wiki/Daniel_Beer
+https://en.wikipedia.org/wiki/Porter_(beer)
+https://en.wikipedia.org/wiki/Walter_Wolff_de_Beer
+https://en.wikipedia.org/wiki/Beer_Lane
+https://en.wikipedia.org/wiki/John_Beer_(priest)
+https://en.wikipedia.org/wiki/Vanilla_Beer
+https://en.wikipedia.org/wiki/Battersea_and_Wandsworth_TUC
+https://en.wikipedia.org/wiki/Otto_Oppenheimer
+https://en.wikipedia.org/wiki/Henry_Lowenfeld
+https://en.wikipedia.org/wiki/Glassglue
+https://en.wikipedia.org/wiki/Millennium_Dome_raid
+https://en.wikipedia.org/wiki/De_Hems
+https://en.wikipedia.org/wiki/Rail_Ale_Ramble
+https://en.wikipedia.org/wiki/Horse_Shoe_Brewery
+https://en.wikipedia.org/wiki/Beck%27s_Futures
+ q3: 0.000356
+https://en.wikipedia.org/wiki/Experimental_beer
+https://en.wikipedia.org/wiki/Beer,_Beer,_Beer
+https://en.wikipedia.org/wiki/Beer_shop
+https://en.wikipedia.org/wiki/Beer_tower
+https://en.wikipedia.org/wiki/Beer_Can_Museum
+https://en.wikipedia.org/wiki/Demography_of_London
+https://en.wikipedia.org/wiki/Beer_fault
+https://en.wikipedia.org/wiki/Beer_ice_cream
+https://en.wikipedia.org/wiki/Beer_cake
+https://en.wikipedia.org/wiki/Beers_Family
+ q4: 0.020981
+** ./data.sh * Time: 5.38s (u) + 1.55s (s)=78.98s (8%) mxRSS 590
+** ./allInOne1 * Time: 78.34s (u) + 3.81s (s)=82.31s (99%) mxRSS 11092

@@ -1,0 +1,3 @@
+586.53user 4.59system 10:02.94elapsed 98%CPU (0avgtext+0avgdata 12902548maxresident)k
+95304inputs+0outputs (0major+3503253minor)pagefaults 0swaps
+**  * Time: 586.53s (u) + 4.60s (s)=602.94s (98%) mxRSS 12600

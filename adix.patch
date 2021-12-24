@@ -1,0 +1,55 @@
+[31m--- ixMerge6.nim	2021-04-06 08:10:50.429045039 -0400[0m
+[32;3m+++ ixZadix.nim	2021-04-10 09:54:11.309843976 -0400[0m
+[36m@@ -1,27 +1,33 @@[0m
+[31m-[0m[31m# Here we rely [0m[31mon imports, wikipa, do top-N[0m[31;7m,[0m[31m [0m[31;7man[0m[31md[0m[31;7m merge cnt int[0m[31mo [0m[31;7m`[0m[31mDoc[0m[31;7m`[0m[31m.[0m
+[31m-[0m[31mimport tabl[0m[31;7mes, hash[0m[31mes, strutils, sugar, ./[0m[31mwikipa, ./[0m[31mr[0m[31me[0m[31;7ma[0m[31md[0m[31;7mer[0m[31m, ./terms,[0m[31;7m ./qutil[0m
+[31m-[0m
+[32;3m+[0m[32;3m# Here we rely [0m[32;3;7mup[0m[32;3mon imports, wikipa, do top-N[0m[32;3m [0m[32;3;7m& [0m[32;3md[0m[32;3mo [0m[32;3;7mHashSet[[0m[32;3mDoc[0m[32;3;7m]-> adix/LPTabz[0m[32;3m.[0m
+[32;3m+[0m[32;3mimport tabl[0m[32;3mes, strutils, sugar, ./[0m[32;3;7mqutil, ./[0m[32;3mwikipa, ./[0m[32;3;7mf[0m[32;3mr[0m[32;3;7mam[0m[32;3me[0m[32;3;7mR[0m[32;3md[0m[32;3m, ./terms,[0m
+[32;3m+       adix/[althash, LPTabz][0m
+ type[0m
+[31m-[0m[31m  Doc = [0m[31mt[0m[31;7muple[[0m[31mi[0m[31;7md, [0m[31mc[0m[31;7mn[0m[31mt[0m[31;7m:[0m[31m uint32[0m[31;7m][0m[31m          # documentId[0m[31;7m,[0m[31m termFreq[0m
+[32;3m+[0m[32;3m  Doc = [0m[32;3;7mdis[0m[32;3mt[0m[32;3mi[0m[32;3;7mn[0m[32;3mc[0m[32;3mt[0m[32;3m uint32[0m[32;3;7m       [0m[32;3m          # documentId[0m[32;3;7m shl 8 or[0m[32;3m termFreq[0m
+[32;3m+  DocSet = LPTabz[Doc, void, Doc, 0]    # set-like, sentinel Doc(0)[0m
+   Index = object                        # Inverted Index[0m
+     names: seq[string]                  # [doc id] = name (uri, etc.)[0m
+[31m-[0m[31m    inv: Table[string, [0m[31;7mHash[0m[31mSet[0m[31;7m[Doc[0m[31m][0m[31;7m][0m[31m    # map term -> docId, freqInDoc[0m
+[32;3m+[0m[32;3m    inv: Table[string, [0m[32;3;7mDoc[0m[32;3mSet[0m[32;3m][0m[32;3;7m      [0m[32;3m    # map term -> docId, freqInDoc[0m
+ [0m
+ proc names*(ix: auto, docs: auto): string =[0m
+[31m-[0m[31m  join(collect(for d in docs: uPrefix & ix.names[d[0m[31m]), "\n")[0m
+[32;3m+[0m[32;3m  join(collect(for d in docs: uPrefix & ix.names[d[0m[32;3;7m - 1[0m[32;3m]), "\n")[0m
+ [0m
+[31m-[0m[31mproc hash(x: Doc): Hash = hash[0m[31m(x.id)[0m[31;7m    # Two procs for HashSet[Doc][0m
+[32;3m+lpInitialSize = 1[0m
+[32;3m+lpRobinHood   = true[0m
+[32;3m+lpNumer = 6; lpDenom = 1                # grow when max search depth > 6*lgN[0m
+[32;3m+proc id(x: Doc): uint32 = uint32(x) shr 8[0m
+[32;3m+proc cnt(x: Doc): uint32 = uint32(x) and 255[0m
+[32;3m+[0m[32;3mproc hash(x: Doc): Hash = hash[0m[32;3;7mRoMu1[0m[32;3m(x.id)[0m
+ proc `==`(a, b: Doc): bool = a.id == b.id[0m
+[31m-[0m[31;7mlet[0m[31m noDocs[0m[31m [0m[31;7m= initHash[0m[31mSet[0m[31;7m[Doc](0)[0m[31m        # convenience empty set[0m
+[32;3m+[0m[32;3;7mvar[0m[32;3m noDocs[0m[32;3;7m:[0m[32;3m [0m[32;3;7mDoc[0m[32;3mSet[0m[32;3;7m              [0m[32;3m        # convenience empty set[0m
+ [0m
+ proc initIndex*(f: File, nDigit=3, nHisto=1): Index =[0m
+   for (name, text) in f.lenPrefixedPairs(nDigit):[0m
+[32;3m+    result.names.add name               # 1-origin so 0,0 a good sentinel[0m
+     var freq = initCountTable[string](nHisto)[0m
+     for term in text.terms: freq.inc term[0m
+     for term, cnt in freq:[0m
+[31m-[0m[31m      let doc = [0m[31m(result.names.len.uint32[0m[31;7m,[0m[31m cnt.uint32)[0m
+[32;3m+[0m[32;3m      let doc = [0m[32;3;7mDoc([0m[32;3m(result.names.len.uint32[0m[32;3;7m shl 8) or[0m[32;3m cnt.uint32)[0m
+       result.inv.mgetOrPut(term, noDocs).incl doc[0m
+[31m-    result.names.add name[0m
+ [0m
+ proc find*(ix: Index, query: string, any=false, top=0): seq[uint32] =[0m
+   var results: seq[HashSet[uint32]][0m
+[36m@@ -37,7 +43,7 @@[0m
+   var hq: HeapQueue[(float32, uint32)][0m
+   for d in res:[0m
+     var s = 0.0'f32                     # Relevance score[0m
+[31m-[0m[31m    for i[0m[31m in [0m[31;7m0..<[0m[31mtFreq[0m[31;7m.len[0m[31m: s += tF[0m[31;7mreq[i][0m[31m.getOrDefault(d).float*idf[i][0m
+[32;3m+[0m[32;3m    for i[0m[32;3;7m, tF[0m[32;3m in [0m[32;3mtFreq[0m[32;3m: s += tF[0m[32;3m.getOrDefault(d).float*idf[i][0m
+     hq.pushOrReplace (s, d), top[0m
+   for e in hq.popAscending: result.add e[1][0m
+   result.reverse                        # Want results in descending order[0m

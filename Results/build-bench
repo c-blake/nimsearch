@@ -1,0 +1,135 @@
+nim c -c --nimcache:/u/cb/.cache/nim/r/ixAllInOneEasy1 -d:release -d:danger --gc:arc -d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto  ixAllInOneEasy1.nim
+Hint: used config file '/usr/lib/nim/config/nim.cfg' [Conf]
+Hint: used config file '/usr/lib/nim/config/config.nims' [Conf]
+Hint: used config file '/u/cb/.config/nim/config.nims' [Conf]
+..........................
+/u/cb/pkg/neng/ixAllInOneEasy1.nim(59, 24) Hint: passing 'name' to a sink parameter introduces an implicit copy; if possible, rearrange your program's control flow to prevent it [Performance]
+Hint: 53027 lines; 0.385s; 76.082MiB peakmem; Dangerous Release build; proj: /u/cb/pkg/neng/ixAllInOneEasy1.nim; out: /u/cb/.cache/nim/r/ixAllInOneEasy1/ixAllInOneEasy1.json [SuccessX]
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-generate /u/cb/.cache/nim/r/ixAllInOneEasy1/@mixAllInOneEasy1.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_io.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_lexbase.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_math.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_parsexml.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_streams.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_system.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_times.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_unicode.nim.c -o ixAllInOneEasy1 -ldl -lm -lstemmer
+PWD is /u/cb/pkg/neng
+./ixAllInOneEasy1  < $a > $n
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-use      /u/cb/.cache/nim/r/ixAllInOneEasy1/@mixAllInOneEasy1.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_io.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_lexbase.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_math.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_parsexml.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_streams.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_system.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_times.nim.c /u/cb/.cache/nim/r/ixAllInOneEasy1/stdlib_unicode.nim.c -o ixAllInOneEasy1 -ldl -lm -lstemmer
+nim c -c --nimcache:/u/cb/.cache/nim/r/ixAllInOnePyIsh2 -d:release -d:danger --gc:arc -d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto  ixAllInOnePyIsh2.nim
+Hint: used config file '/usr/lib/nim/config/nim.cfg' [Conf]
+Hint: used config file '/usr/lib/nim/config/config.nims' [Conf]
+Hint: used config file '/u/cb/.config/nim/config.nims' [Conf]
+..........................
+/u/cb/pkg/neng/ixAllInOnePyIsh2.nim(85, 23) Hint: passing 'doc' to a sink parameter introduces an implicit copy; if possible, rearrange your program's control flow to prevent it [Performance]
+Hint: 53069 lines; 0.404s; 76.074MiB peakmem; Dangerous Release build; proj: /u/cb/pkg/neng/ixAllInOnePyIsh2.nim; out: /u/cb/.cache/nim/r/ixAllInOnePyIsh2/ixAllInOnePyIsh2.json [SuccessX]
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-generate /u/cb/.cache/nim/r/ixAllInOnePyIsh2/@mixAllInOnePyIsh2.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_io.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_lexbase.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_math.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_parsexml.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_streams.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_system.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_times.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_unicode.nim.c -o ixAllInOnePyIsh2 -ldl -lm -lstemmer
+PWD is /u/cb/pkg/neng
+./ixAllInOnePyIsh2 < $a > $n
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-use      /u/cb/.cache/nim/r/ixAllInOnePyIsh2/@mixAllInOnePyIsh2.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_io.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_lexbase.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_math.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_parsexml.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_streams.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_system.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_times.nim.c /u/cb/.cache/nim/r/ixAllInOnePyIsh2/stdlib_unicode.nim.c -o ixAllInOnePyIsh2 -ldl -lm -lstemmer
+nim c -c --nimcache:/u/cb/.cache/nim/r/ixAllInOneUTF8_3 -d:release -d:danger --gc:arc -d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto  ixAllInOneUTF8_3.nim
+Hint: used config file '/usr/lib/nim/config/nim.cfg' [Conf]
+Hint: used config file '/usr/lib/nim/config/config.nims' [Conf]
+Hint: used config file '/u/cb/.config/nim/config.nims' [Conf]
+..........................
+/u/cb/pkg/neng/ixAllInOneUTF8_3.nim(97, 23) Hint: passing 'doc' to a sink parameter introduces an implicit copy; if possible, rearrange your program's control flow to prevent it [Performance]
+Hint: 53081 lines; 0.430s; 94.039MiB peakmem; Dangerous Release build; proj: /u/cb/pkg/neng/ixAllInOneUTF8_3.nim; out: /u/cb/.cache/nim/r/ixAllInOneUTF8_3/ixAllInOneUTF8_3.json [SuccessX]
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-generate /u/cb/.cache/nim/r/ixAllInOneUTF8_3/@mixAllInOneUTF8_3.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_io.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_lexbase.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_math.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_parsexml.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_streams.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_system.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_times.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_unicode.nim.c -o ixAllInOneUTF8_3 -ldl -lm -lstemmer
+PWD is /u/cb/pkg/neng
+./ixAllInOneUTF8_3 < $a > $n
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-use      /u/cb/.cache/nim/r/ixAllInOneUTF8_3/@mixAllInOneUTF8_3.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_io.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_lexbase.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_math.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_parsexml.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_streams.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_system.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_times.nim.c /u/cb/.cache/nim/r/ixAllInOneUTF8_3/stdlib_unicode.nim.c -o ixAllInOneUTF8_3 -ldl -lm -lstemmer
+nim c -c --nimcache:/u/cb/.cache/nim/r/wikipa -d:release -d:danger --gc:arc -d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto  wikipa.nim
+Hint: used config file '/usr/lib/nim/config/nim.cfg' [Conf]
+Hint: used config file '/usr/lib/nim/config/config.nims' [Conf]
+Hint: used config file '/u/cb/.config/nim/config.nims' [Conf]
+.....................
+Hint: 43836 lines; 0.302s; 61.172MiB peakmem; Dangerous Release build; proj: /u/cb/pkg/neng/wikipa.nim; out: /u/cb/.cache/nim/r/wikipa/wikipa.json [SuccessX]
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-generate /u/cb/.cache/nim/r/wikipa/@mwikipa.nim.c /u/cb/.cache/nim/r/wikipa/@mxmlIt.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_hashes.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_io.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_lexbase.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_math.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_parsexml.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_streams.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_strutils.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_system.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_unicode.nim.c -o wikipa -ldl -lm -lstemmer
+PWD is /u/cb/pkg/neng
+./wikipa           < $a > $f
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-use      /u/cb/.cache/nim/r/wikipa/@mwikipa.nim.c /u/cb/.cache/nim/r/wikipa/@mxmlIt.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_hashes.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_io.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_lexbase.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_math.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_parsexml.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_streams.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_strutils.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_system.nim.c /u/cb/.cache/nim/r/wikipa/stdlib_unicode.nim.c -o wikipa -ldl -lm -lstemmer
+nim c -c --nimcache:/u/cb/.cache/nim/r/ixEasy4 -d:release -d:danger --gc:arc -d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto  ixEasy4.nim
+Hint: used config file '/usr/lib/nim/config/nim.cfg' [Conf]
+Hint: used config file '/usr/lib/nim/config/config.nims' [Conf]
+Hint: used config file '/u/cb/.config/nim/config.nims' [Conf]
+...............................
+/u/cb/pkg/neng/ixEasy4.nim(3, 17) Warning: imported and not used: 'wikipa' [UnusedImport]
+Hint: 53167 lines; 0.408s; 76.086MiB peakmem; Dangerous Release build; proj: /u/cb/pkg/neng/ixEasy4.nim; out: /u/cb/.cache/nim/r/ixEasy4/ixEasy4.json [SuccessX]
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-generate /u/cb/.cache/nim/r/ixEasy4/@mixEasy4.nim.c /u/cb/.cache/nim/r/ixEasy4/@mterms.nim.c /u/cb/.cache/nim/r/ixEasy4/@mwikipa.nim.c /u/cb/.cache/nim/r/ixEasy4/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_io.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_math.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_system.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_times.nim.c -o ixEasy4 -ldl -lm -lstemmer
+PWD is /u/cb/pkg/neng
+./ixEasy4    < $f > $n
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-use      /u/cb/.cache/nim/r/ixEasy4/@mixEasy4.nim.c /u/cb/.cache/nim/r/ixEasy4/@mterms.nim.c /u/cb/.cache/nim/r/ixEasy4/@mwikipa.nim.c /u/cb/.cache/nim/r/ixEasy4/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_io.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_math.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_system.nim.c /u/cb/.cache/nim/r/ixEasy4/stdlib_times.nim.c -o ixEasy4 -ldl -lm -lstemmer
+nim c -c --nimcache:/u/cb/.cache/nim/r/ixFull5 -d:release -d:danger --gc:arc -d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto  ixFull5.nim
+Hint: used config file '/usr/lib/nim/config/nim.cfg' [Conf]
+Hint: used config file '/usr/lib/nim/config/config.nims' [Conf]
+Hint: used config file '/u/cb/.config/nim/config.nims' [Conf]
+................................
+/u/cb/pkg/neng/ixFull5.nim(3, 17) Warning: imported and not used: 'wikipa' [UnusedImport]
+Hint: 53441 lines; 0.423s; 76.039MiB peakmem; Dangerous Release build; proj: /u/cb/pkg/neng/ixFull5.nim; out: /u/cb/.cache/nim/r/ixFull5/ixFull5.json [SuccessX]
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-generate /u/cb/.cache/nim/r/ixFull5/@mixFull5.nim.c /u/cb/.cache/nim/r/ixFull5/@mterms.nim.c /u/cb/.cache/nim/r/ixFull5/@mwikipa.nim.c /u/cb/.cache/nim/r/ixFull5/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_io.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_math.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_system.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_times.nim.c -o ixFull5 -ldl -lm -lstemmer
+PWD is /u/cb/pkg/neng
+./ixFull5    < $f > $n
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-use      /u/cb/.cache/nim/r/ixFull5/@mixFull5.nim.c /u/cb/.cache/nim/r/ixFull5/@mterms.nim.c /u/cb/.cache/nim/r/ixFull5/@mwikipa.nim.c /u/cb/.cache/nim/r/ixFull5/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_io.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_math.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_system.nim.c /u/cb/.cache/nim/r/ixFull5/stdlib_times.nim.c -o ixFull5 -ldl -lm -lstemmer
+nim c -c --nimcache:/u/cb/.cache/nim/r/ixMerge6 -d:release -d:danger --gc:arc -d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto  ixMerge6.nim
+Hint: used config file '/usr/lib/nim/config/nim.cfg' [Conf]
+Hint: used config file '/usr/lib/nim/config/config.nims' [Conf]
+Hint: used config file '/u/cb/.config/nim/config.nims' [Conf]
+................................
+/u/cb/pkg/neng/ixMerge6.nim(3, 17) Warning: imported and not used: 'wikipa' [UnusedImport]
+Hint: 53441 lines; 0.449s; 76.047MiB peakmem; Dangerous Release build; proj: /u/cb/pkg/neng/ixMerge6.nim; out: /u/cb/.cache/nim/r/ixMerge6/ixMerge6.json [SuccessX]
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-generate /u/cb/.cache/nim/r/ixMerge6/@mixMerge6.nim.c /u/cb/.cache/nim/r/ixMerge6/@mterms.nim.c /u/cb/.cache/nim/r/ixMerge6/@mwikipa.nim.c /u/cb/.cache/nim/r/ixMerge6/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_io.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_math.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_system.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_times.nim.c -o ixMerge6 -ldl -lm -lstemmer
+PWD is /u/cb/pkg/neng
+./ixMerge6   < $f > $n
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-use      /u/cb/.cache/nim/r/ixMerge6/@mixMerge6.nim.c /u/cb/.cache/nim/r/ixMerge6/@mterms.nim.c /u/cb/.cache/nim/r/ixMerge6/@mwikipa.nim.c /u/cb/.cache/nim/r/ixMerge6/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_io.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_math.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_system.nim.c /u/cb/.cache/nim/r/ixMerge6/stdlib_times.nim.c -o ixMerge6 -ldl -lm -lstemmer
+nim c -c --nimcache:/u/cb/.cache/nim/r/ixRankCos7 -d:release -d:danger --gc:arc -d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto  ixRankCos7.nim
+Hint: used config file '/usr/lib/nim/config/nim.cfg' [Conf]
+Hint: used config file '/usr/lib/nim/config/config.nims' [Conf]
+Hint: used config file '/u/cb/.config/nim/config.nims' [Conf]
+................................
+/u/cb/pkg/neng/ixRankCos7.nim(3, 17) Warning: imported and not used: 'wikipa' [UnusedImport]
+Hint: 53442 lines; 0.463s; 93.539MiB peakmem; Dangerous Release build; proj: /u/cb/pkg/neng/ixRankCos7.nim; out: /u/cb/.cache/nim/r/ixRankCos7/ixRankCos7.json [SuccessX]
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-generate /u/cb/.cache/nim/r/ixRankCos7/@mixRankCos7.nim.c /u/cb/.cache/nim/r/ixRankCos7/@mterms.nim.c /u/cb/.cache/nim/r/ixRankCos7/@mwikipa.nim.c /u/cb/.cache/nim/r/ixRankCos7/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_io.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_math.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_system.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_times.nim.c -o ixRankCos7 -ldl -lm -lstemmer
+PWD is /u/cb/pkg/neng
+./ixRankCos7 < $f > $n
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-use      /u/cb/.cache/nim/r/ixRankCos7/@mixRankCos7.nim.c /u/cb/.cache/nim/r/ixRankCos7/@mterms.nim.c /u/cb/.cache/nim/r/ixRankCos7/@mwikipa.nim.c /u/cb/.cache/nim/r/ixRankCos7/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_io.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_math.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_system.nim.c /u/cb/.cache/nim/r/ixRankCos7/stdlib_times.nim.c -o ixRankCos7 -ldl -lm -lstemmer
+rm: cannot remove '.': Is a directory
+nim c -c --nimcache:/u/cb/.cache/nim/r/ixSave8 -d:release -d:danger --gc:arc -d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto  ixSave8.nim
+Hint: used config file '/usr/lib/nim/config/nim.cfg' [Conf]
+Hint: used config file '/usr/lib/nim/config/config.nims' [Conf]
+Hint: used config file '/u/cb/.config/nim/config.nims' [Conf]
+...................................
+/u/cb/pkg/neng/ixSave8.nim(3, 17) Warning: imported and not used: 'wikipa' [UnusedImport]
+Hint: 57782 lines; 0.514s; 94.199MiB peakmem; Dangerous Release build; proj: /u/cb/pkg/neng/ixSave8.nim; out: /u/cb/.cache/nim/r/ixSave8/ixSave8.json [SuccessX]
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-generate /u/cb/.cache/nim/r/ixSave8/@mixSave8.nim.c /u/cb/.cache/nim/r/ixSave8/@mterms.nim.c /u/cb/.cache/nim/r/ixSave8/@mwikipa.nim.c /u/cb/.cache/nim/r/ixSave8/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_io.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_macros.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_math.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_os.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_parseutils.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_pathnorm.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_system.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_times.nim.c -o ixSave8 -ldl -lm -lstemmer
+PWD is /u/cb/pkg/neng
+./ixSave8 /dev/shm/ix build <$f>$n;echo london beer|./ixSave8
+31172 unique terms in 14286 documents
+"top <N>" changes result limit; "mode o*" OR else AND queries.
+
+query 0.000039
+gcc -g3 -ggdb -I/usr/lib/nim/lib -O3 -fbuiltin -fomit-frame-pointer  -fwhole-program -flto -D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing -march=native -mtune=native -momit-leaf-frame-pointer -mfpmath=sse,387 -mfancy-math-387 -w  -fprofile-use      /u/cb/.cache/nim/r/ixSave8/@mixSave8.nim.c /u/cb/.cache/nim/r/ixSave8/@mterms.nim.c /u/cb/.cache/nim/r/ixSave8/@mwikipa.nim.c /u/cb/.cache/nim/r/ixSave8/@mxmlIt.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_enumutils.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_hashes.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_io.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_macros.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_math.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_os.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_parseutils.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_pathnorm.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_strutils.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_system.nim.c /u/cb/.cache/nim/r/ixSave8/stdlib_times.nim.c -o ixSave8 -ldl -lm -lstemmer
+rm: cannot remove '.': Is a directory
+**  * Time: 42.46s (u) + 2.61s (s)=45.06s (100%) mxRSS 128
+BENCHMARKING.
+ixAllInOneEasy1
+39.79user 1.32system 0:41.17elapsed 99%CPU (0avgtext+0avgdata 3746756maxresident)k
+0inputs+0outputs (0major+1578348minor)pagefaults 0swaps
+ixAllInOnePyIsh2
+60.81user 2.20system 1:03.20elapsed 99%CPU (0avgtext+0avgdata 8168352maxresident)k
+0inputs+0outputs (0major+2511222minor)pagefaults 0swaps
+ixAllInOneUTF8_3
+85.27user 2.17system 1:27.71elapsed 99%CPU (0avgtext+0avgdata 8102128maxresident)k
+32inputs+0outputs (0major+2487888minor)pagefaults 0swaps
+wikipa
+7.71user 0.37system 0:08.10elapsed 99%CPU (0avgtext+0avgdata 2024maxresident)k
+0inputs+0outputs (0major+137minor)pagefaults 0swaps
+ixEasy4
+26.88user 0.91system 0:27.83elapsed 99%CPU (0avgtext+0avgdata 2780064maxresident)k
+0inputs+0outputs (0major+1084302minor)pagefaults 0swaps
+ixFull5
+33.85user 1.95system 0:35.90elapsed 99%CPU (0avgtext+0avgdata 8044300maxresident)k
+0inputs+0outputs (0major+2450301minor)pagefaults 0swaps
+ixMerge6
+26.87user 0.93system 0:27.89elapsed 99%CPU (0avgtext+0avgdata 2784552maxresident)k
+0inputs+0outputs (0major+1086259minor)pagefaults 0swaps
+ixRankCos7
+28.04user 0.93system 0:29.05elapsed 99%CPU (0avgtext+0avgdata 2808608maxresident)k
+0inputs+0outputs (0major+1098319minor)pagefaults 0swaps
+rm: cannot remove '.': Is a directory
+ixSave8
+32.53user 5.82system 0:38.53elapsed 99%CPU (0avgtext+0avgdata 2401636maxresident)k
+0inputs+0outputs (0major+988784minor)pagefaults 0swaps
+**  * Time: 351.38s (u) + 19.12s (s)=365.43s (101%) mxRSS 7976

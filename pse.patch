@@ -1,0 +1,60 @@
+diff --git a/run.py b/run.py
+index 512f536..7aa4480 100644
+--- a/run.py
++++ b/run.py
+@@ -24,8 +24,11 @@ if __name__ == '__main__':
+ 
+     index = index_documents(load_documents(), Index())
+     print(f'Index contains {len(index.documents)} documents')
++    print(f'{len(index.index)} unique terms')
++    def names(xs): return "\n".join([o.url for o in xs])
++    def rnames(xs): return "\n".join([str((o[1], o[0].url)) for o in xs])
+ 
+-    index.search('London Beer Flood', search_type='AND')
+-    index.search('London Beer Flood', search_type='OR')
+-    index.search('London Beer Flood', search_type='AND', rank=True)
+-    index.search('London Beer Flood', search_type='OR', rank=True)
++    print(names(index.search('London Beer', search_type='AND')))
++    print(len(index.search('London Beer', search_type='OR')))
++    print(rnames(index.search('London Beer', search_type='AND', rank=True)))
++    print(rnames(index.search('London Beer', search_type='OR', rank=True)[0:9]))
+diff --git a/search/analysis.py b/search/analysis.py
+index 30e9138..432378a 100644
+--- a/search/analysis.py
++++ b/search/analysis.py
+@@ -4,9 +4,11 @@ import Stemmer
+ 
+ # top 25 most common words in English and "wikipedia":
+ # https://en.wikipedia.org/wiki/Most_common_words_in_English
+-STOPWORDS = set(['the', 'be', 'to', 'of', 'and', 'a', 'in', 'that', 'have',
+-                 'I', 'it', 'for', 'not', 'on', 'with', 'he', 'as', 'you',
+-                 'do', 'at', 'this', 'but', 'his', 'by', 'from', 'wikipedia'])
++STOPWORDS = set(['the', 'be', 'to', 'of', 'and', 'a', 'in', 'that', 'have', 'i',
++ 'it', 'for', 'not', 'on', 'with', 'he', 'as', 'you', 'do', 'at', 'this', 'but',
++ 'his', 'by', 'from', 'is', 'was', 'or', 's', 'an', 'may', 'new', 'are', 'who',
++ 'which', 'name', 'also', 'has', 'its', # Last bit here is Wikipedia-specific.
++ 'born', 'birth', 'place', 'places', 'known', 'refer', 'refers' ])
+ PUNCTUATION = re.compile('[%s]' % re.escape(string.punctuation))
+ STEMMER = Stemmer.Stemmer('english')
+ 
+@@ -33,3 +35,20 @@ def analyze(text):
+     tokens = stem_filter(tokens)
+ 
+     return [token for token in tokens if token]
++
++upper = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
++          'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}
++lower = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
++          'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}
++def lowCaseWords(text):
++  result = []
++  word = ""
++  for c in text:
++    if   c in upper: word += chr(ord(c) + 32)
++    elif c in lower: word += c
++    elif len(word) > 0: result.append(word); word = ""
++  if len(word) > 0: result.append(word)
++  return result
++
++def analyze(text): # name `analyze` to match Nim results
++    return [t for t in stem_filter(stopword_filter(lowCaseWords(text))) if t]
