@@ -14,7 +14,7 @@ varying length in Nim `MemFile`s.)
 There is a script called `diffs.sh` that shows a set of interesting changes
 and some miscellaneous results, build/bench scripts/patches.  I had originally
 planned to write some good exposition of all of these individual diffs.
-For now/a long while maybe you can just run `./diffs.sh | your--diff-viewer`.
+For now/a long while maybe you can just run `./diffs.sh | your-diff-viewer`.
 Of course, I recommend https://github.com/c-blake/hldiff piped to `less`,
 but there are a great many.
 
