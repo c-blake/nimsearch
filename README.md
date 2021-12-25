@@ -13,18 +13,18 @@ varying length in Nim `MemFile`s.)
 
 There is a script called `diffs.sh` that shows a set of interesting changes
 and some miscellaneous results, build/bench scripts/patches.  I had originally
-planned to write some good exposition of all of these individual diffs.
-For now/a long while maybe you can just run `./diffs.sh | your-diff-viewer`.
-Of course, I recommend https://github.com/c-blake/hldiff piped to `less`,
-but there are a great many.
+planned to write some good exposition of all of these individual diffs, but oh
+well.  Many are small.  Just run `./diffs.sh | your-diff-viewer` or `diff=viewer
+./diffs.sh`.  (Of course, I recommend https://github.com/c-blake/hldiff piped to
+`less`, but there are many.)
 
 Some of these scripts may assume that you have either copies or symbolic or
-hard links to saved/pre-downloaded data files such as enwiki-\*.  These files
+hard links to saved/pre-downloaded data files such as `enwiki-*`.  These files
 are too big to realistically include in the repository, but ambitious readers
 should have little trouble getting them using `data.sh` (and re-compressing
-with parallel `zstd` to get `.zs` files if they do not want to wait forever
-and a day for decompression). `data.sh` itself also uses `catz` from the 
-https://github.com/c-blake/nio package.
+with parallel decompressing `zstd` to get `.zs` files if they do not want to
+wait forever and a day for decompression).  `data.sh` itself also uses `catz`
+from the https://github.com/c-blake/nio package.
 
 That's about it.  This is *not* the more fully explained tutorial/article work
 I had originally set out to do.  Related ideas recently arose in the
