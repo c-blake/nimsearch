@@ -13,10 +13,10 @@ varying length in Nim `MemFile`s.)
 
 There is a script called `diffs.sh` that shows a set of interesting changes
 and some miscellaneous results, build/bench scripts/patches.  I had originally
-planned to write some good exposition of all of these individual diffs, but oh
-well.  Many are small.  Just run `./diffs.sh | your-diff-viewer` or `diff=viewer
-./diffs.sh`.  (Of course, I recommend https://github.com/c-blake/hldiff piped to
-`less`, but there are many.)
+planned to write some good exposition of all of these edits, but oh well.
+Many are small.  Just run `./diffs.sh | your-diff-viewer` or `diff=viewer
+./diffs.sh`.  (Of course, I recommend https://github.com/c-blake/hldiff piped
+to `less`, but there are many.)
 
 Some of these scripts may assume that you have either copies or symbolic or
 hard links to saved/pre-downloaded data files such as `enwiki-*`.  These files
