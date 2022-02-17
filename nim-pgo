@@ -5,7 +5,7 @@
 : ${cmd="$2"}  #Sample command invocation for profile-guided-optimization
 : ${nimO="--cc:gcc -d:danger -d:release"}   #nim optimization; e.g. -d:release
 : ${nimOpts="$3"} #nim compilation options; e.g. --gc:markAndSweep
-: ${nimcache="$HOME/.cache/nim/r/$prog"}
+: ${nimcache="${XDG_CACHE_HOME:-$HOME/.cache}/nim/${prog}_r"}
 : ${BE=c}
 : ${ccC="gcc"}
 : ${ccG="-g3 -ggdb"}
