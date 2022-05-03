@@ -18,7 +18,7 @@ iterator xml(f: File, name: string, elements: HashSet[string], dataKinds =
   open(x, f.newFileStream, name)
   x.next                                # get to first XML element
   var t = ""
-  while x.kind != xmlEOF:
+  while x.kind != xmlEof:
     if x.kind == xmlElementStart and (let e = x.elementName; e in elements):
       x.next; t.setLen 0                # skip ElementStart; trunc yielded
       while not (x.kind == xmlElementEnd and x.elementName == e):

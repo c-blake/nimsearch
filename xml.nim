@@ -6,7 +6,7 @@ iterator xml*(f: File, name: string, elements: HashSet[string], dataKinds =
   var x: XmlParser                      # yield (elName, innerText) for elements
   open(x, f.newFileStream, name)
   x.next                                # get to first XML element
-  while x.kind != xmlEOF:
+  while x.kind != xmlEof:
     if x.kind in {xmlElementStart, xmlElementOpen} and
        (var e = x.elementName; e in elements):
       if x.kind == xmlElementOpen:
