@@ -6,7 +6,7 @@
 ## This only supports "append" of items with novel keys & data is written first.
 ## Tables are 0-fill only w/no re-org and when grown a new file is made and put
 ## in place atomically.  Thus, one-writer/many-reader scenarios need no locks,
-## but readers must call `refresh` for an up-to-date views on dynamic data.
+## but readers must call `refresh` for an up-to-date view of dynamic data.
 
 import hashes, os, memfiles as mf, math
 proc memcmp(a, b: pointer; n: csize_t): cint {.header: "<string.h>".}
