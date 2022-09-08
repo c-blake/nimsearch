@@ -149,26 +149,40 @@ proc packIndex*(tabNm, datNm: string, tab0=12) =
     p.cnt[].inc
   p.close
 
-when isMainModule: #XXX add a `split` to explode into files
-  let u = "Usage:\n  pack add PACK FILE_A [..]\n" &
-          "    add files FILE_A .. to PACK & index PACK.Nq\n" &
-          "  pack cat PACK KEY_A [..]\n    print val for KEY_A ..\n" &
-          "  pack list PACK\n    lists keys, one to a line\n" &
-          "  pack index PACK\n    recreate PACK.Nq from PACK"
+proc packSplit*(datNm: string) =  # Could take an outName(key) name maker
+  ## Split a pack data file into its components
+  var p: Pack           # Only a partial `packOpen`; table need not exist
+  p.datF = mf.open(datNm)
+  p.usedAtOpen = p.used; p.mode = fmRead; p.datN = datNm
+  var key: string
+  for kv in p.keyVals:
+    key.setLen kv[0]; copyMem key[0].addr, kv[1], kv[0]
+    key.writeFile toOpenArray[byte](cast[ptr UncheckedArray[byte]](kv[3]),
+                                    0, kv[2] - 1)
+
+when isMainModule:
+  let u = """Usage:
+  pack add   PACK FILE_A [..]  add files FILE_A .. to PACK & index PACK.NL
+  pack cat   PACK KEY_A [..]   print val for KEY_A ..
+  pack list  PACK              lists keys, one to a line
+  pack index PACK              recreate PACK.NL from PACK
+  pack split PACK              split PACK.NL into files"""
   if paramCount()<1 or paramCount()==1 and paramStr(1)=="help": echo u; quit()
   if paramStr(1) == "add" and paramCount() > 1:
-    var pack = packOpen(paramStr(2) & ".Nq", paramStr(2) & ".pa", fmReadWrite)
+    var pack = packOpen(paramStr(2) & ".NL", paramStr(2) & ".pa", fmReadWrite)
     for i in 3..paramCount(): pack.add paramStr(i), paramStr(i).readFile
     pack.close
   elif paramStr(1) == "cat" and paramCount() > 1:
-    var pack = packOpen(paramStr(2) & ".Nq", paramStr(2) & ".pa")
+    var pack = packOpen(paramStr(2) & ".NL", paramStr(2) & ".pa")
     for i in 3..paramCount():
       let (n, v) = pack.get(paramStr(i))
       discard stdout.writeBuffer(v, n)
   elif paramStr(1) == "list" and paramCount() > 1:
-    var pack = packOpen(paramStr(2) & ".Nq", paramStr(2) & ".pa")
+    var pack = packOpen(paramStr(2) & ".NL", paramStr(2) & ".pa")
     for key in pack.keys:
       let (nK, k) = key; discard stdout.writeBuffer(k, nK); echo ""
   elif paramStr(1) == "index" and paramCount() > 1:
-    packIndex(paramStr(2) & ".Nq", paramStr(2) & ".pa")
+    packIndex(paramStr(2) & ".NL", paramStr(2) & ".pa")
+  elif paramStr(1) == "split" and paramCount() > 1:
+    packSplit(paramStr(2) & ".pa")
   else: echo "Bad usage; Run with no args or with \"help\" for help"; quit(1)

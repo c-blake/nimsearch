@@ -20,7 +20,7 @@ let noDocs = newSeq[Doc](0)             # convenience empty set
 
 proc buildSave*(f: File, path="/dev/shm/ix", nDigit=3, nHisto=1) =
   var nmData = open(path/"NMDATA0", fmWrite)  # lowercase terms cannot collide
-  var nmPtrs = open(path/"NMDATA.Ni", fmWrite)
+  var nmPtrs = open(path/"NMDATA.NI", fmWrite)
   var inv: Table[string, seq[Doc]]            # map term -> docId, freqInDoc
   var nDoc, off: uint32
   for (name, text) in f.lenPrefixedPairs(nDigit):
@@ -47,7 +47,7 @@ proc buildSave*(f: File, path="/dev/shm/ix", nDigit=3, nHisto=1) =
 
 proc initIndex*(path="/dev/shm/ix"): Index =
   result.nmD  = mf.open(path/"NMDATA0")
-  result.nmP  = mf.open(path/"NMDATA.Ni")
+  result.nmP  = mf.open(path/"NMDATA.NI")
   result.nrm  = mf.open(path/"NORMS.Nf")
   result.path = path
 
