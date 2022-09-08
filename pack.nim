@@ -1,12 +1,12 @@
-## This prog/lib saves space (only a lot for many tiny files) at 0 time cost by
-## packing files into back-to-back (2Blen,key,4Blen,val) data & a re-buildable
+## This lib/prog saves space (only a lot for many tiny files) at 0 time cost by
+## packing files into back-to-back (2Blen,key,4Blen,val) data & a re-makable
 ## hash table index of (ptr,len) pairs pointing to it.  OS FSes *could* support
 ## this (e.g. cpiofs) but even if so, ditching FS metadata can still save a lot.
 ##
 ## This only supports "append" of items with novel keys & data is written first.
-## Tables are 0-fill only w/no re-org and when grown a new file is made and put
-## in place atomically.  Thus, one-writer/many-reader scenarios need no locks,
-## but readers must call `refresh` for an up-to-date view of dynamic data.
+## Tables are 0-fill only w/no re-org.  When grown a new file is made and put in
+## place atomically.  Thus, one-writer/many-reader scenarios need no locks, but
+## readers must call `refresh` for an up-to-date view of dynamic data.
 
 import hashes, os, memfiles as mf, math
 proc memcmp(a, b: pointer; n: csize_t): cint {.header: "<string.h>".}
@@ -38,11 +38,13 @@ proc tooFull(c, s: int): bool = (c * 16 > s * 13) or (s < c + 16)
 proc slots(c: int): int = 1 + nextPowerOfTwo(c * 16 div 13 + 16)
 
 proc packOpen*(tabNm, datNm: string, mode=fmRead, tab0=12, dat0=128): Pack =
+  ## Open|make a pack file & its index.  For pre-sizing, `tab0` is the initial
+  ## number of keys while `dat0` is the initial data size in bytes.
   result.mode = mode; result.tabN = tabNm; result.datN = datNm
   if mode == fmRead:                    # open read-only
     result.datF = mf.open(datNm)
     result.tabF = mf.open(tabNm)
-  elif existsFile datNm:                # open existing read-write
+  elif fileExists datNm:                # open existing read-write
     result.datF = mf.open(datNm, fmReadWrite, allowRemap=true)
     result.tabF = mf.open(tabNm, fmReadWrite, allowRemap=true)
   else:                                 # create empty files
@@ -52,6 +54,7 @@ proc packOpen*(tabNm, datNm: string, mode=fmRead, tab0=12, dat0=128): Pack =
   result.usedAtOpen = result.used
 
 proc close*(p: var Pack, pad=false) =
+  ## Release OS resources for an open pack file.
   p.tabF.close
   if p.mode == fmReadWrite and not pad: p.datF.resize p.used.int
   p.datF.close
@@ -68,6 +71,7 @@ proc find(p: Pack, q: string|TabEnt, h: Hash): int =
   -i - 1                                # missing insert @ -(result)-1
 
 proc get*(p: Pack; key: string): (int, pointer) =
+  ## Find the value buffer for a given `key`.
   let i = p.find(key, hash(key))
   if i < 0: (0, nil) else: p.val(p.tab[i])
 
@@ -87,6 +91,7 @@ proc growTab(p: var Pack) =
   moveFile tmp, p.tabN                  # atomic replace
 
 proc add*(p: var Pack; key, val: string) =
+  ## Add (`key`, `val`) pair to an open, writable pack.
   if key.len > uint16.high.int: raise newException(ValueError, "key too long")
   if val.len > ValLen.high.int: raise newException(ValueError, "val too long")
   let h = key.hash
@@ -108,8 +113,8 @@ proc add*(p: var Pack; key, val: string) =
   p.cnt[].inc #XXX atomic store release to ensure p.refresh works right on ARM
   (cast[ptr uint64](p.datF.mem))[] += uint64(key.len + 2 + vls + val.len)
 
-template iterate(doYield) {.dirty.} =
-  var adr  = cast[uint64](p.datF.at 8)
+template iterate(doYield) {.dirty.} =   # This just iterates over the back-to-
+  var adr  = cast[uint64](p.datF.at 8)  #..back format of the data file.
   var left = p.used.int64 - 8
   while left > 0:
     let nK = cast[ptr uint16](adr)[]
@@ -119,19 +124,23 @@ template iterate(doYield) {.dirty.} =
     adr += sz; left -= sz.int64
 
 iterator keys*(p: Pack): (int, pointer) =
+  ## Iterate over just the keys in an open pack file.
   iterate: yield (nK.int, cast[pointer](adr + 2))
 
 iterator keyVals*(p: Pack): (int, pointer, int, pointer) =
+  ## Iterate over just the vals in an open pack file.
   iterate: yield (nK.int, cast[pointer](adr + 2),
                   nV.int, cast[pointer](adr + 2 + nK + ValLen.sizeof.uint64))
 
 proc refresh*(p: var Pack) =
+  ## Re-open a read-only pack only if necessary; Fast when unneeded.
   if p.mode == fmRead and p.used != p.usedAtOpen:
     p.close; p = packOpen(p.tabN, p.datN)
 
 proc packIndex*(tabNm, datNm: string, tab0=12) =
-  if tabNm.existsFile: raise newException(OSError, "\"" & tabNm & "\" exists")
-  var p: Pack
+  ## Re-make a hash index from the back-to-back file of records.
+  if tabNm.fileExists: raise newException(OSError, "\"" & tabNm & "\" exists")
+  var p: Pack           # Only a partial `packOpen`; table need not exist
   p.datF = mf.open(datNm)
   p.usedAtOpen = p.used; p.mode = fmRead; p.tabN = tabNm; p.datN = datNm
   p.tabF = mf.open(tabNm, fmReadWrite, -1, 0, tab0.slots*TabEnt.sizeof, true)
