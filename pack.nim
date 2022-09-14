@@ -63,7 +63,7 @@ proc find(p: Pack, q: string|TabEnt, h: Hash): int =
   let mask = p.slots - 1
   var i = h and mask
   while (let te = p.tab[i]; uint64(te) != 0):
-    when q is string: # else: table grow find always a novel key
+    when q is string: # else: growTab TabEnt branch always finds a novel key
       let (n, k) = p.key(te)
       if n == q.len and memcmp(k, q[0].unsafeAddr, n.csize_t) == 0:
         return i
