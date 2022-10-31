@@ -1,4 +1,5 @@
 ## Canonicalize dumps.wikimedia.org/enwiki/latest/enwiki-latest-abstract.xml
+when not declared(stdout): import std/syncio
 import sets, strutils, xml
 when defined(skipEmpty):
   import terms

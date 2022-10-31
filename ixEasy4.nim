@@ -1,4 +1,5 @@
 # Like ixAllInOneEasy1.nim but rely on imports and wikipa preprocessing.
+when not declared(File): import std/syncio
 import tables, strutils, sugar, ./reader, ./terms, ./qutil
 
 type Index = object                     # Inverted Index

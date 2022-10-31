@@ -1,3 +1,4 @@
+when not declared(File): import std/syncio
 import parseutils, posix, times
 import strutils except parseInt
 

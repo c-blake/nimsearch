@@ -1,4 +1,5 @@
 # Here we rely on imports, wikipa, do top-N, and merge cnt into `Doc`.
+when not declared(File): import std/syncio
 import tables, hashes, strutils, sugar, ./reader, ./terms, ./qutil
 
 type

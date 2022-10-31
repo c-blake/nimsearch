@@ -1,4 +1,5 @@
 # Here we add stemming, stop words & ranking (like Py, but 1/8 time, 2/3 space).
+when not declared(File): import std/syncio
 import sets, tables, math, strutils, algorithm, streams, parsexml, sugar, times
 
 {.passl: "/usr/lib64/libstemmer.so".}   # YOU MAY NEED TO ADJUST THIS!

@@ -23,11 +23,12 @@ export ccL="-ldl -lm -lstemmer"
 ./nim-pgo ixEasy4          './ixEasy4    < $f > $n' "$x"
 ./nim-pgo ixFull5          './ixFull5    < $f > $n' "$x"
 ./nim-pgo ixMerge6         './ixMerge6   < $f > $n' "$x"
-./nim-pgo ixRankCos7       './ixRankCos7 < $f > $n' "$x"
+./nim-pgo ixOrdered7       './ixOrdered7 < $f > $n' "$x"
+./nim-pgo ixRankCos8       './ixRankCos8 < $f > $n' "$x"
 
 mkdir -p /dev/shm/ix; (cd /dev/shm/ix && rm -f .)
-./nim-pgo ixSave8 './ixSave8 /dev/shm/ix build <$f>$n;echo london beer|./ixSave8' "$x"
+./nim-pgo ixSaveBasic9 './ixSaveBasic9 /dev/shm/ix build <$f>$n;echo london beer|./ixSaveBasic9' "$x"
 (cd /dev/shm/ix && rm -f .)
 
-./nim-pgo ixSaveMmap9 './ixSaveMmap9 /dev/shm/ix build <$f>$n;echo london beer|./ixSaveMmap9' "$x"
+./nim-pgo ixSaveMmapA './ixSaveMmapA /dev/shm/ix build <$f>$n;echo london beer|./ixSaveMmapA' "$x"
 (cd /dev/shm/ix && rm -f .)

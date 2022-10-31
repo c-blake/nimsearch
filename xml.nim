@@ -1,3 +1,4 @@
+when not declared(File): import std/syncio
 import sets, streams, parsexml
 
 iterator xml*(f: File, name: string, elements: HashSet[string], dataKinds =

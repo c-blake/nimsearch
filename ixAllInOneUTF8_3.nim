@@ -1,4 +1,5 @@
 # Here we add UTF8 tokenizing and properly stem stops.
+when not declared(File): import std/syncio
 import sets,tables,math,strutils,algorithm,streams,parsexml,sugar,times,unicode
 
 {.passl: "/usr/lib64/libstemmer.so".}   # YOU MAY NEED TO ADJUST THIS!

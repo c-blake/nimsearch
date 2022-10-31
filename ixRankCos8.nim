@@ -1,4 +1,5 @@
 # Rely on imports/wikipa, do top-N, merge cnt, do seq[Doc], and cosine-rank.
+when not declared(File): import std/syncio
 import tables, hashes, strutils, sugar, ./reader, ./terms, ./qutil
 
 type

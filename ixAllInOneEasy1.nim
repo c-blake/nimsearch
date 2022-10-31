@@ -1,4 +1,5 @@
 # The essence of the problem/solution all in a single file.
+when not declared(File): import std/syncio
 import sets, tables, strutils, streams, parsexml, sugar, times
 
 iterator words(text: string): string =  # Tokenizer; could go UTF8, limit..

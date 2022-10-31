@@ -18,7 +18,8 @@ echo wikipa          ; $tm ./wikipa           <$a >$f
 echo ixEasy4         ; $tm ./ixEasy4          <$f >$n
 echo ixFull5         ; $tm ./ixFull5          <$f >$n
 echo ixMerge6        ; $tm ./ixMerge6         <$f >$n
-echo ixRankCos7      ; $tm ./ixRankCos7       <$f >$n
+echo ixOrdered7      ; $tm ./ixOrdered7       <$f >$n
+echo ixRankCos8      ; $tm ./ixRankCos8       <$f >$n
 mkdir -p $ix; (cd $ix && rm -f .)
-echo ixSave8         ; $tm ./ixSave8 $ix build <$f >$n
+echo ixSaveBasic9    ; $tm ./ixSaveBasic9 $ix build <$f >$n
 # (cd $ix && rm -f .) # leave around for query testing

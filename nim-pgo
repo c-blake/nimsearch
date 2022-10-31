@@ -15,7 +15,7 @@
 #: ${OMP="-fopenmp"}
 : ${OFP="-fomit-frame-pointer"}
 : ${OLP="-momit-leaf-frame-pointer"}
-: ${LTO="-flto"}
+: ${LTO="-flto=auto"}
 : ${OLV="-O3"}
 : ${ccO="$OLV $BI $OFP $OMP $WHOLE $LTO"}
 : ${ccD="-D_GNU_SOURCE -std=gnu99 -fno-strict-aliasing"}

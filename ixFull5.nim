@@ -1,4 +1,5 @@
 # Here we rely on imports, wikipa, and do top-N-by-relevance results.
+when not declared(File): import std/syncio
 import tables, strutils, sugar, ./reader, ./terms, ./qutil
 
 type                            # Main code: Here to end of `find`
