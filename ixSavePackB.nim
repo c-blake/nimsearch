@@ -41,7 +41,7 @@ proc buildSave*(f: File, path="/dev/shm/ix", nDigit=3, nHisto=1) =
       copyMem ds[4*i].addr, ic.addr, ic.sizeof; i.inc
       norms[d.id] += d.cnt.float * d.cnt.float
     try: pack.add term, ds
-    except: echo "could not save posting list for term: ", term
+    except CatchableError: echo "could not save posting list for term: ", term
   for d, norm in norms: norms[d] = 1.0 / sqrt(norm)
   var normsF = open(path/"NORMS.Nf", fmWrite)
   discard normsF.writeBuffer(norms[0].addr, 4*norms.len)

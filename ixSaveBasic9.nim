@@ -56,7 +56,7 @@ proc getOrDefault(ix: Index, term: string, dflt: seq[Doc]): seq[Doc] =
     discard f.readBuffer(data[0].addr, sz)
     f.close
     for num in data: result.add (num shr 7, (num and 0x7F) * (num and 0x7F))
-  except: discard # return is empty seq by default
+  except CatchableError: discard # return is empty seq by default
 
 proc find*(ix: Index, query: string, any=false, top=10): seq[uint32] =
   var results: seq[seq[uint32]]

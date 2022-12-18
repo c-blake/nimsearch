@@ -60,7 +60,7 @@ proc getOrDefault(ix: Index, term: string, dflt: seq[Doc]): seq[Doc] =
       let num = cast[ptr uint32](cast[uint](dset.mem) + cast[uint](4*i))[]
       result[i] = (num shr 7, (num and 0x7F) * (num and 0x7F))
     mf.close dset
-  except: discard # return is empty seq by default
+  except CatchableError: discard # return is empty seq by default
 
 proc find*(ix: Index, query: string, any=false, top=10): seq[uint32] =
   var results: seq[seq[uint32]]
