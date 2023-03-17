@@ -4,8 +4,8 @@ export n='/dev/null'
 : ${f:='/tmp/framed'}
 : ${x:=''}                  # -d:stem -d:unic -d:skipEmpty
 : ${nob:='-d:useMalloc --checks:off --panics:on --passC:-flto --passL:-flto'}
-: ${gc:="arc"}
-: ${no:="-d:release -d:danger --gc:$gc $nob"}
+: ${mm:="arc"}
+: ${no:="-d:release -d:danger --mm:$mm $nob"}
 export nimO="$no"
 export a f
 
