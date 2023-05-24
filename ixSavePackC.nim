@@ -2,7 +2,7 @@
 import tables, hashes, strutils, sugar, os, ./reader, ./terms, ./qutil
 from memfiles as mf import nil; import ./pack
 type
-  Doc = object {.packed.}               # 8B -> 6B
+  Doc {.packed.} = object               # 8B -> 6B
     id: uint32                          # documentId
     cnt: uint16                         # termFreq
   Index = object                        # Inverted Index
